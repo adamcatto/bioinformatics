@@ -1,7 +1,10 @@
 """
-Implementations of code challenges in "Bioinformatics Algorithms" by Compeau and Pevzner.
+Implementations of code challenges in "Bioinformatics Algorithms" by Compeau 
+and Pevzner.
 
-I will be implementing all algorithms using only the Python standard library, unless certain computations become too unwieldy and I must resort to using e.g. NumPy.
+I will be implementing all algorithms using only the Python standard library,
+unless certain computations become too unwieldy and I must resort to using e.g. 
+NumPy.
 
 author: Adam Catto
 """
@@ -67,7 +70,8 @@ def reverse_complement(dna_string):
 
 def all_patterns(genome, pattern):
     """
-    problem (1D) – find all starting indices of occurance of a pattern in a genome string.
+    problem (1D) – find all starting indices of occurance of a pattern in a 
+    genome string.
 
     returns a list of indices.
     """
@@ -83,7 +87,8 @@ def all_patterns(genome, pattern):
 
 def find_clumps_slowly(genome, window_length, k, num_times):
     """
-    problem (1E) – find k-mer clumps over a certain window length occuring a given number of times.
+    problem (1E) – find k-mer clumps over a certain window length occuring a 
+    given number of times.
 
     return a list of k-mers (strings of length = k) forming num_times-clumps.
     """
@@ -104,9 +109,14 @@ def find_clumps_slowly(genome, window_length, k, num_times):
 
 def find_clumps_quickly(genome, window_length, k, num_times):
     """
-    problem (1E) – find k-mer clumps over a certain window length occuring a given number of times.
+    problem (1E) – find k-mer clumps over a certain window length occuring a 
+    given number of times.
 
-    This is a faster implementation than the more straightforward one given. This passes over the first window and finds num_times-clump-forming k-mers, then slides the window over on the genome, decrementing the previous first k-mer's frequency and incrementing the new last k-mer's frequency, and checking if the new last k-mer's frequency hits the threshold.
+    This is a faster implementation than the more straightforward one given. 
+    This passes over the first window and finds num_times-clump-forming k-mers, 
+    then slides the window over on the genome, decrementing the previous first 
+    k-mer's frequency and incrementing the new last k-mer's frequency, and 
+    checking if the new last k-mer's frequency hits the threshold.
 
     return a list of k-mers (strings of length = k) forming num_times-clumps.
     """
