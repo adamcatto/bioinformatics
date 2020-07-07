@@ -38,7 +38,7 @@ def frequent_patterns(text, window_size):
             patterns[text[i:window_size]] += 1
     max_val = 0
     max_patterns = []
-    for pattern in patterns.keys:
+    for pattern in patterns.keys():
         if patterns[pattern] == max_val:
             max_patterns += [pattern]
         elif patterns[pattern] > max_val:
@@ -100,9 +100,9 @@ def find_clumps_slowly(genome, window_length, k, num_times):
         clumps = {}
         for j in range(len(window)):
             pattern = window[j:j + k]
-            if pattern not in clumps.keys or pattern not in k_mers:
+            if pattern not in clumps.keys() or pattern not in k_mers:
                 clumps[pattern] = pattern_count(window, pattern)
-        for pattern in clumps.keys:
+        for pattern in clumps.keys():
             if clumps[pattern] >= num_times:
                 k_mers += [pattern]
     return k_mers
@@ -131,7 +131,7 @@ def find_clumps_quickly(genome, window_length, k, num_times):
             pattern_freq[pattern] = 1
         else:
             pattern_freq[pattern] += 1
-    for pattern in pattern_freq.keys:
+    for pattern in pattern_freq.keys():
         if pattern_freq[pattern] >= num_times:
             k_mers += pattern
     for j in range(1, len(genome) - (k+1)):
@@ -142,4 +142,3 @@ def find_clumps_quickly(genome, window_length, k, num_times):
             k_mers += [new_last_pattern]
     k_mers = list(dict.fromkeys(k_mers)) # remove duplicates
     return k_mers
-
